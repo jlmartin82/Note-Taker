@@ -15,4 +15,8 @@ app.post('/api/notes', (req, res) => {
     fs.writeFileSync('./db.json', JSON.stringify({ notes: newNotes }, null, 2)); 
     res.send(note);
   });
-  
+
+app.listen(3001,()=>{
+    console.log("App is listening on port 3001");
+});
+
