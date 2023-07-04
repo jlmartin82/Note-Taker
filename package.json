@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "epxress": "^0.0.1-security",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "uuid": "^9.0.0"
   }
 }
