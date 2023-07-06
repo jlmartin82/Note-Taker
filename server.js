@@ -2,15 +2,12 @@ const express = require('express');
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
-
-
+app.use(express.urlencoded({extended:true})) 
 app.use(express.static('public'));
-
 
 app.get('/notes', (req, res) => {
   res.sendFile(__dirname + '/notes.html');
@@ -19,7 +16,6 @@ app.get('/notes', (req, res) => {
 app.get('*', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
-
 
 app.get('/api/notes', (req, res) => {
   fs.readFile('db.json', 'utf8', (err, data) => {
@@ -41,7 +37,7 @@ app.post('/api/notes', (req, res) => {
       res.status(500).json({ error: 'Unable to read notes data.' });
     } else {
       const notes = JSON.parse(data);
-      note.id = generateUniqueId(); 
+      note.id = generateUniqueId();
       notes.push(note);
       fs.writeFile('db.json', JSON.stringify(notes), (err) => {
         if (err) {
@@ -56,9 +52,8 @@ app.post('/api/notes', (req, res) => {
 });
 
 function generateUniqueId() {
-    return uuidv4();
-  }
-  
+  return uuidv4();
+}
 
 app.listen(PORT, () => {
   console.log(`App is listening on port ${PORT}`);

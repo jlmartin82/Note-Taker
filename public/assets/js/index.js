@@ -181,4 +181,3 @@ if (window.location.pathname === '/notes.html') {
 }
 
 getAndRenderNotes();
-
