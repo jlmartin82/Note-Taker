@@ -41,6 +41,10 @@ The following images show the web application's appearance and functionality:
 
 [walkthrough](<../../../Desktop/NoteTaker_ Jul 8, 2023 9_28 AM.webm>)
 
+Walkthrough 
+[NoteTaker_ Jul 8, 2023 9_28 AM.webm](https://github.com/jlmartin82/Note-Taker/assets/129562637/2a4a3ec5-6401-49a8-9c58-041c61c84fd3)
+
+
 ## Getting Started
 
 To run the Note Taker application locally, follow these steps:
